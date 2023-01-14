@@ -1,0 +1,4 @@
+repository "WIP_PROJECT@StudioLunar@cloud"
+  path "/"
+    br "/main"
+    co "/main"
