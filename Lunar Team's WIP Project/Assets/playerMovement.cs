@@ -73,25 +73,21 @@ private void StateHandler(){
      moveSpeed = crouchSpeed;
     }
     else if(grounded && Input.GetKey(sprintKey)){
-        Debug.Log("hi1");
         state = MovementState.sprinting;
         moveSpeed = 20;
         acceleration = sprintSpeed;
     }
     else if(grounded){
-        Debug.Log("hi2");
         state = MovementState.walking;
         moveSpeed = walkSpeed;
         acceleration = walkSpeed;
     }
     else if(Input.GetKey(sprintKey)){
-        Debug.Log("hi3");
         state = MovementState.air;
         moveSpeed = airsprintSpeed;
         acceleration = sprintSpeed;
     }
     else{
-        Debug.Log("hi3");
         state = MovementState.air;
         moveSpeed = airwalkSpeed;
         acceleration = walkSpeed;
