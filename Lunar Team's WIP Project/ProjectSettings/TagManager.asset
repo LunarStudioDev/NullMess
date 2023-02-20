@@ -14,7 +14,7 @@ TagManager:
   - ground
   - post processing epic win
   - bruh momentus
-  - 
+  - holographic display
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: bruh
+    uniqueID: 2279999603
     locked: 0
