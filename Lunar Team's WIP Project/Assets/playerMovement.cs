@@ -22,7 +22,7 @@ public KeyCode sprintKey = KeyCode.LeftShift;
 public float groundDrag;
 public float playerHeight;
 public LayerMask whatIsGround;
-bool grounded;
+public bool grounded;
 
 public Transform orientation;
 
@@ -48,6 +48,14 @@ private RaycastHit slopeHit;
 
 private bool exitingSlope;
 
+//ui detection
+public KeyCode uiKey = KeyCode.X;
+public GameObject ui;
+
+private bool isUiOn;
+
+
+
 //scripting
 
 public enum MovementState{
@@ -58,6 +66,7 @@ public enum MovementState{
 }
 
 private void Start(){
+    isUiOn = true;
     airsprintSpeed = sprintSpeed / 2;
     airwalkSpeed = walkSpeed / 2;
     rb = GetComponent<Rigidbody>();
@@ -133,6 +142,10 @@ private void MyInput()
     }
     if (Input.GetKeyUp(crouchKey)){
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+    }
+    if (Input.GetKeyDown(uiKey)){
+        print("hello");
+        ui.SetActive(!ui.activeSelf);
     }
 }
 
