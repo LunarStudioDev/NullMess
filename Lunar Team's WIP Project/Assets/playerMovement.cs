@@ -54,7 +54,14 @@ public GameObject ui;
 
 private bool isUiOn;
 
+public lookingScript scriptLook;
 
+public swayScript swayScript;
+
+Quaternion targetAngle_90 = Quaternion.Euler (-60,0,0);
+Quaternion targetAngle_0 = Quaternion.Euler (0,0,0);
+
+public Quaternion currentAngle;
 
 //scripting
 
@@ -66,6 +73,8 @@ public enum MovementState{
 }
 
 private void Start(){
+    currentAngle = targetAngle_0;
+
     isUiOn = true;
     airsprintSpeed = sprintSpeed / 2;
     airwalkSpeed = walkSpeed / 2;
@@ -144,10 +153,30 @@ private void MyInput()
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
     if (Input.GetKeyDown(uiKey)){
-        print("hello");
+        if(Cursor.lockState == CursorLockMode.Locked){
+            Cursor.lockState = CursorLockMode.Confined;
+            scriptLook.lookEnabled = false;
+            swayScript.swayOn = false;
+            swayScript.bobOffset = false;
+            swayScript.bobSway = false;
+            
+            
+        } else{
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            scriptLook.lookEnabled = true;
+            swayScript.swayOn = true;
+            swayScript.bobOffset = true;
+            swayScript.bobSway = true;
+        }
         ui.SetActive(!ui.activeSelf);
+
+        //transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smoothness * Time.deltaTime);
+
+        //transform.localPosition = Vector3.Lerp(transform.localPosition, bobPosition, Time.deltaTime * smooth);
     }
 }
+
 
 private void MovePlayer()
 {

@@ -1146,6 +1146,9 @@ MonoBehaviour:
   maxSlopeAngle: 40
   uiKey: 120
   ui: {fileID: 2002378240}
+  scriptLook: {fileID: 963194229}
+  swayScript: {fileID: 6626204754907671928}
+  currentAngle: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1680,7 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 213061272}
+  lookEnabled: 0
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4077,7 +4081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2002378241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4689,7 +4693,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638348533815701071
 GameObject:
@@ -5075,7 +5079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900668010461426449
 GameObject:
@@ -5156,7 +5160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2559775177041627168
 GameObject:
@@ -6174,7 +6178,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6193200752799032043
 Transform:
@@ -6191,12 +6195,12 @@ Transform:
   - {fileID: 5189514675332356271}
   - {fileID: 7026475062890445198}
   - {fileID: 4223654937900713923}
-  - {fileID: 7707238820307230549}
   - {fileID: 2376426107985542135}
   - {fileID: 1863448403044392866}
   - {fileID: 8012925878398365422}
   - {fileID: 6148711467084975682}
   - {fileID: 634429906976282241}
+  - {fileID: 7707238820307230549}
   m_Father: {fileID: 5818319432903489484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6418,14 +6422,15 @@ MonoBehaviour:
   smoothness: 4
   rb: {fileID: 678345914}
   gScript: {fileID: 678345915}
+  swayOn: 1
   bobOffset: 1
   bobSway: 1
   smooth: 6
   smoothRot: 6
   speedCurve: 0
-  travelLimit: {x: 0.025, y: 0.025, z: 0.025}
-  bobLimit: {x: 0.005, y: 0.0075, z: 0.0075}
-  multiplier: {x: 0.25, y: 0.25, z: 0.25}
+  travelLimit: {x: 0.01, y: 0.01, z: 0.01}
+  bobLimit: {x: 0.005, y: 0.005, z: 0.005}
+  multiplier: {x: 0.25, y: 0.25, z: 0.5}
 --- !u!114 &6626204754907671929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6864,13 +6869,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617765707783180183}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.003494881, y: -1.4639391, z: -1.589905}
-  m_LocalScale: {x: 17.995602, y: 17.995602, z: 17.995602}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.0034950648, y: -1.4639391, z: -1.5899051}
+  m_LocalScale: {x: 17.995602, y: 17.995604, z: 17.995602}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7710951597297248751
 GameObject:
@@ -7000,7 +7005,7 @@ Transform:
   m_Children:
   - {fileID: 844047031}
   m_Father: {fileID: 6193200752799032043}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90.226, y: 68.137, z: -68.26999}
 --- !u!4 &8091678911885232813
 Transform:

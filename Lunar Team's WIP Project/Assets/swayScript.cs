@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +13,17 @@ public class swayScript : MonoBehaviour
 
 
 
-
+public bool swayOn = true;
 public bool bobOffset = true;
 public bool bobSway = true;
 
-    public float smooth = 10f;
-    public float smoothRot = 12f;
+    public float smooth = 6f;
+    public float smoothRot = 6f;
     private void Update()
     {
+        
 
+        
         float mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
         float mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
 
@@ -30,15 +33,23 @@ public bool bobSway = true;
          Quaternion targetRotation = rotationX * rotationY;
           BobOffet();
           BobRotation();
-
+        if(swayOn){
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smoothness * Time.deltaTime);
 
         transform.localPosition = Vector3.Lerp(transform.localPosition, bobPosition, Time.deltaTime * smooth);
         
        
         transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(bobEulerRotation), Time.deltaTime * smoothRot); 
+        }
+        if(!swayOn){
+             Quaternion fromRotation = transform.localRotation;
+    
+             transform.localRotation = Quaternion.Slerp(fromRotation,Quaternion.Euler(-60, transform.localRotation.y, transform.localRotation.z), Time.deltaTime * 3f);
+        }
 
     }
+
+    
 
     public float speedCurve;
     float curveSin { get => Mathf.Sin(speedCurve);}

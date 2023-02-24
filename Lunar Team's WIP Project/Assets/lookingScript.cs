@@ -13,17 +13,21 @@ public class lookingScript : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    public bool lookEnabled;
+
     
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        lookEnabled = true;
     }
 
-    
+
     private void Update()
     {
         
 
+        if (lookEnabled){
         float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
         float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * Time.deltaTime;
         yRotation += mouseX;
@@ -33,6 +37,7 @@ public class lookingScript : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0,  yRotation, 0);
+        }
         
 
     }
