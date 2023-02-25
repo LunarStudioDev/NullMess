@@ -51,6 +51,7 @@ private bool exitingSlope;
 //ui detection
 public KeyCode uiKey = KeyCode.X;
 public GameObject ui;
+public GameObject crosshair;
 
 private bool isUiOn;
 
@@ -170,6 +171,8 @@ private void MyInput()
             swayScript.bobSway = true;
         }
         ui.SetActive(!ui.activeSelf);
+        crosshair.SetActive(!crosshair.activeSelf);
+        Cursor.visible = !Cursor.visible;
 
         //transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smoothness * Time.deltaTime);
 
