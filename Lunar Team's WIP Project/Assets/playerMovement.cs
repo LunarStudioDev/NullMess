@@ -55,6 +55,8 @@ public GameObject crosshair;
 
 private bool isUiOn;
 
+public bool isCube1On;
+
 public lookingScript scriptLook;
 
 public swayScript swayScript;
@@ -66,6 +68,7 @@ public Quaternion currentAngle;
 
 //scripting
 
+
 public enum MovementState{
     walking,
     sprinting,
@@ -73,7 +76,12 @@ public enum MovementState{
     air
 }
 
+
+
 private void Start(){
+
+    
+
     currentAngle = targetAngle_0;
 
     isUiOn = true;
@@ -84,6 +92,8 @@ private void Start(){
 
     readyToJump = true;
     startYScale = transform.localScale.y;
+    isUiOn = false;
+    isCube1On = false;
 }
 
 private void StateHandler(){
@@ -154,16 +164,18 @@ private void MyInput()
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
     if (Input.GetKeyDown(uiKey)){
+        if(isCube1On || isUiOn){
         if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.lockState = CursorLockMode.Confined;
             scriptLook.lookEnabled = false;
             swayScript.swayOn = false;
             swayScript.bobOffset = false;
             swayScript.bobSway = false;
+            isUiOn = true;
             
             
         } else{
-            
+            isUiOn = false;
             Cursor.lockState = CursorLockMode.Locked;
             scriptLook.lookEnabled = true;
             swayScript.swayOn = true;
@@ -173,10 +185,10 @@ private void MyInput()
         ui.SetActive(!ui.activeSelf);
         crosshair.SetActive(!crosshair.activeSelf);
         Cursor.visible = !Cursor.visible;
+        }
 
-        //transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smoothness * Time.deltaTime);
 
-        //transform.localPosition = Vector3.Lerp(transform.localPosition, bobPosition, Time.deltaTime * smooth);
+
     }
 }
 
