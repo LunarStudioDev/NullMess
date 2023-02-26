@@ -1,35 +1,36 @@
-Gra pod tytułem “NULL” opowiada o postaci która trafia do wirtualnego świata, bez swoich wspomnień
-oraz tego jak tam trafiła, oraz po co. Przez całą grę towarzyszyć będzie nam tajemniczy głos kobiety
-która stara się pomóc głównemu bohaterowi przechodzić przez coraz większe wyzwania.
+Gra pod tytułem “NULL” opowiada o postaci, która trafia do wirtualnego świata, bez swoich wspomnień
+oraz tego jak tam trafiła, oraz po co. Przez całą grę towarzyszyć będzie nam tajemniczy głos kobiety, która stara się pomóc głównemu bohaterowi przechodzić przez coraz większe wyzwania.
 
 Projekt ten jest miszmaszem gatunkowym, opiera się na dwóch głównych mechanikach - Walki z
-wrogami używając broni palnych, oraz tworzenia funkcji które są w stanie robić różnorakie rzeczy.
+wrogami używając broni palnych, oraz tworzenia funkcji, które są w stanie robić różnorakie rzeczy.
 Ważne jest to, iż obydwie te mechaniki są ściśle ze sobą połączone.
 
-Podczas walki możemy odpalić daną funkcje tylko jednym przyciskiem klawiatury, funkcję którą wcześniej zmodyfikowaliśmy oczywiście.
+Podczas walki możemy odpalić daną funkcję tylko jednym przyciskiem klawiatury, funkcję, którą wcześniej zmodyfikowaliśmy oczywiście.
 Możemy zapętlić ją i w zależności od obiektu robić różne inne rzeczy.
 (W zależności od obiektu modyfikacja może mieć więcej opcji, być bardziej nastawiona na logiczne rozwiązywanie - jak i mniej.
-Na przykład, Spawner z przedmiotami dodającymi zdrowie moze być prosty do włączenia, wystarczyć będzie przeciągnąć jeden blok w odpowiednie miejsce.)
+Na przykład, Spawner z przedmiotami dodającymi zdrowie może być prosty do włączenia, wystarczyć będzie przeciągnąć jeden blok w odpowiednie miejsce).
 
-Ale teraz pytanie, jak modyfikować kod kiedy jest się otoczonym masą przeciwników? Tutaj przyda się moduł tarczy.
+Ale teraz pytanie, jak modyfikować kod, kiedy jest się otoczonym masą przeciwników? Tutaj przyda się moduł tarczy.
 Stawia ona tarczę wokół gracza. Trwa ona tyle ile pasek "funkcji" (wyjaśnione za chwile) może trwać, ale można przerwać ją wcześniej.
-Sprawia ona iż przeciwnicy wokół gracza nie mogą go zaatakować, a przy wyjściu z tarczy odpycha ona przeciwników aby dać graczowi trochę wolnego miejsca.
+Sprawia ona, iż przeciwnicy wokół gracza nie mogą go zaatakować, a przy wyjściu z tarczy odpycha ona przeciwników, aby dać graczowi trochę wolnego miejsca.
 
-Pasek funkcji jest mechaniką która ma upewniać że gracz nie będzie nadużywał niektórych funkcji w grze, np. nie będzie w stanie zapętlić w nieskończoność niektórych czynności.
-Jest również ważną częścią tarczy, jak i ogólnego balansu broni. Kod w takich funkcjach będzie przydatny, ale jest również inne miejsce w którym można użyć kodu.
+Pasek funkcji jest mechaniką którą ma upewniać, że gracz nie będzie nadużywał niektórych funkcji w grze, np. nie będzie w stanie zapętlić w nieskończoność niektórych czynności.
+Jest również ważną częścią tarczy, jak i ogólnego balansu broni. Kod w takich funkcjach będzie przydatny, ale jest również inne miejsce, w którym można użyć kodu.
 
-Secondary Fire, to alternatywny tryb strzału który ładuje się (w zależności od tego jak gracz wybierze) albo razem z ubiegiem czasu, albo jak się neutralizuje wrogów.
-Bazowo jest to potężny pojedynczy strzał który zadaje mase obrażeń.
-Ten tryb ma również UI do programowania - można zmienić jak broń działa. Można dodać DMG, ale za to zwiększyć czas oczekiwania na następny taki strzał, etc.
+Secondary Fire, to alternatywny tryb strzału, który ładuje się (w zależności od tego jak gracz wybierze) albo razem z biegiem czasu, albo jak się neutralizuje wrogów.
+Bazowo jest to potężny pojedynczy strzał, który zadaje masę obrażeń.
+Ten tryb ma również UI do programowania - można nim zmienić jak broń działa. Można dodać DMG, ale za to zwiększyć czas oczekiwania na następny taki strzał, etc.
 Ważne są też miejsca na specjalne wariacje kodu (planowany jest tylko jeden na wersję na konkurs). Przykładem jest Full-Auto Module.
-Moduł ten zmienia kod aby dobrze odwzorować zmiany które wprowadza - sprawia że pistolet zamienia się w pełni automatyczną broń.
-Jest to już jednak nie tylko część tego alternatywnego trybu strzelania, lecz równiez ogólna edycja całej broni.
+Moduł ten zmienia kod, aby dobrze odwzorować zmiany które wprowadza - sprawia że pistolet zamienia się w pełni automatyczną broń.
+Jest to już całkowita edycja broni, a nie tylko specjalnego trybu strzału.
 
 Kod w broniach jest o wiele prostszy od normalnego kodowania. Opiera się głównie na zwiększaniu lub zmniejszaniu parametrów bez przeciągania bloków.
-Jednakże, wciąż uważam to za ważny element gry ponieważ pozwala na lepszą personalizacje broni do poszczególnego gracza.
-Możesz np. odjąć punkty w obrażenia, i dodać je do magazynku. Lub odjąć punkty z magazynku i dodać je do szybszego ładowania Secondary Fire.
-Jest też opcja na odjącie punktów i wsadzenie je w pasek funkcji aby szybciej się on odnawiał.
+Jednakże, wciąż uważam to za ważny element gry, ponieważ pozwala na lepszą personalizację broni do poszczególnego gracza.
+Możesz np. odjąć punkty w obrażenia i dodać je do magazynku. Lub odjąć punkty z magazynku i dodać je do szybszego ładowania Secondary Fire.
+Jest też opcja na odjęcie punktów i wsadzenie je w pasek funkcji, aby szybciej się on odnawiał.
 
-Wypisane aspekty gry na górze są aspektami które prawie napewno dostaną się do gry. Są również aspekty które mogą się pojawić które nie są zawarte tutaj.
-Ostatnio Zaktualizowane: 21.02.2023
+Wypisane aspekty gry na górze są aspektami, które prawie na pewno dostaną się do gry. Są również aspekty, które mogą się pojawić, które nie są zawarte tutaj.
+Gra ta ma również bardzo duże pole do manewru, jeżeli chodzi o dalszy rozwój. W planach jest np. pisanie własnego kodu, możliwość podszkolenia się w większej ilości języków niż C#, oraz tryb łamigłówek, w którym dostawać byśmy mogli losowo generowane polecenia, które musielibyśmy jak najszybciej rozwiązać.
+
+Ostatnio Zaktualizowane: 26.02.2023
 
