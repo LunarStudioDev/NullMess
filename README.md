@@ -3,4 +3,4 @@ Dokumentacja - Zdjęcia, opis gry.
 
 Null v#.# - Najnowsza wersja gry
 
-Ostatni plik jest plikiem z projektem w unity.
+Plik z projektem: Lunar Team's WIP Project
