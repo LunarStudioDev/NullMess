@@ -22,7 +22,7 @@ public KeyCode sprintKey = KeyCode.LeftShift;
 public float groundDrag;
 public float playerHeight;
 public LayerMask whatIsGround;
-bool grounded;
+public bool grounded;
 
 public Transform orientation;
 
@@ -48,7 +48,26 @@ private RaycastHit slopeHit;
 
 private bool exitingSlope;
 
+//ui detection
+public KeyCode uiKey = KeyCode.X;
+public GameObject ui;
+public GameObject crosshair;
+
+private bool isUiOn;
+
+public bool isCube1On;
+
+public lookingScript scriptLook;
+
+public swayScript swayScript;
+
+Quaternion targetAngle_90 = Quaternion.Euler (-60,0,0);
+Quaternion targetAngle_0 = Quaternion.Euler (0,0,0);
+
+public Quaternion currentAngle;
+
 //scripting
+
 
 public enum MovementState{
     walking,
@@ -57,7 +76,15 @@ public enum MovementState{
     air
 }
 
+
+
 private void Start(){
+
+    
+
+    currentAngle = targetAngle_0;
+
+    isUiOn = true;
     airsprintSpeed = sprintSpeed / 2;
     airwalkSpeed = walkSpeed / 2;
     rb = GetComponent<Rigidbody>();
@@ -65,6 +92,8 @@ private void Start(){
 
     readyToJump = true;
     startYScale = transform.localScale.y;
+    isUiOn = false;
+    isCube1On = false;
 }
 
 private void StateHandler(){
@@ -134,7 +163,35 @@ private void MyInput()
     if (Input.GetKeyUp(crouchKey)){
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
+    if (Input.GetKeyDown(uiKey)){
+        if(isCube1On || isUiOn){
+        if(Cursor.lockState == CursorLockMode.Locked){
+            Cursor.lockState = CursorLockMode.Confined;
+            scriptLook.lookEnabled = false;
+            swayScript.swayOn = false;
+            swayScript.bobOffset = false;
+            swayScript.bobSway = false;
+            isUiOn = true;
+            
+            
+        } else{
+            isUiOn = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            scriptLook.lookEnabled = true;
+            swayScript.swayOn = true;
+            swayScript.bobOffset = true;
+            swayScript.bobSway = true;
+        }
+        ui.SetActive(!ui.activeSelf);
+        crosshair.SetActive(!crosshair.activeSelf);
+        Cursor.visible = !Cursor.visible;
+        }
+
+
+
+    }
 }
+
 
 private void MovePlayer()
 {
