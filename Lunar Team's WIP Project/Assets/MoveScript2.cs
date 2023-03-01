@@ -28,7 +28,7 @@ private Vector3 velocity;
     
         void OnMouseOver()
     {
-        uiScript.isCube1On = true;
+            uiScript.isCube1On = true;
         Material[] mats = part.GetComponent<Renderer>().materials;
         mats[2] = matHover;
         part.GetComponent<Renderer>().materials = mats;

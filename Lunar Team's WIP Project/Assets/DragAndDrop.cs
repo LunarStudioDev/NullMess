@@ -26,10 +26,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
         canvasGroup.blocksRaycasts = false;
-        codeHolder.functionCode.SetActive(true);
-        square.moveValue = 0;    
+        //codeHolder.functionCode.SetActive(true);
+        //square.moveValue = 0;    
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)

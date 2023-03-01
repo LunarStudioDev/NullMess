@@ -18,8 +18,8 @@ public class codeHolder : MonoBehaviour, IDropHandler
               //  }
             
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-            functionCode.SetActive(false);
-            square1.moveValue = 1;
+            //functionCode.SetActive(false);
+            //square1.moveValue = 1;
             }
         }
     }

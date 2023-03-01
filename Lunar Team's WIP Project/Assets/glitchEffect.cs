@@ -23,7 +23,7 @@ public class glitchEffect : MonoBehaviour
     void Update(){
         img = this.GetComponent<Image>();
         col = img.color;
-        col.a = img.color.a + 0.0005f;
+        col.a = img.color.a + (0.25f * Time.deltaTime);
         img.color = col;
     }
     IEnumerator waiter(){

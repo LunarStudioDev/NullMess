@@ -473,7 +473,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178422
+  m_Name: pb_Mesh24604
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1583,7 +1583,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178492
+  m_Name: pb_Mesh24690
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2196,7 +2196,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178762
+  m_Name: pb_Mesh25034
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2839,7 +2839,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178922
+  m_Name: pb_Mesh25238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5306,7 +5306,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178286
+  m_Name: pb_Mesh24440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5683,7 +5683,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178818
+  m_Name: pb_Mesh25098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6423,7 +6423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178352
+  m_Name: pb_Mesh24518
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7062,6 +7062,7 @@ GameObject:
   - component: {fileID: 678345913}
   - component: {fileID: 678345914}
   - component: {fileID: 678345915}
+  - component: {fileID: 678345916}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7142,6 +7143,18 @@ MonoBehaviour:
   scriptLook: {fileID: 963194229}
   swayScript: {fileID: 6626204754907671928}
   currentAngle: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &678345916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678345911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465676cb2fcd49047a87267f852d9484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &702244814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,7 +7541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178200
+  m_Name: pb_Mesh24344
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8771,7 +8784,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d9320b23f9787d49a19edd4432393db, type: 3}
@@ -9100,7 +9113,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178374
+  m_Name: pb_Mesh24540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9781,7 +9794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178736
+  m_Name: pb_Mesh25008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12302,7 +12315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178172
+  m_Name: pb_Mesh24300
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12807,7 +12820,7 @@ MonoBehaviour:
   audio1: {fileID: 963194232}
   cameraAnimator: {fileID: 1789517536}
   positionCamera: {fileID: 802645428}
-  hands: {fileID: 1597703893}
+  hands: {fileID: 0}
   script1: {fileID: 678345915}
   script2: {fileID: 963194229}
   script3: {fileID: 1789517534}
@@ -12859,7 +12872,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178948
+  m_Name: pb_Mesh25264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13868,7 +13881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1597703894
 Transform:
   m_ObjectHideFlags: 0
@@ -14744,6 +14757,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armsGun: {fileID: 1682282739}
   gunAnim: {fileID: 1682282743}
+  ImpactParticleSystem: {fileID: 0}
+  ShootingSystem: {fileID: 0}
+  BulletSpawnPoint: {fileID: 0}
+  BulletTrail: {fileID: 0}
+  fireRate: 0.1
+  damage: 25
+  Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 0}
+  wepCamera: {fileID: 0}
+  glockFireSound: {fileID: 0}
+  glockReloadSound: {fileID: 0}
+  maxAmmo: 15
+  currentAmmo: 0
+  reloadTime: 0
+  isReloading: 0
 --- !u!114 &1682282742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15255,7 +15285,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh179096
+  m_Name: pb_Mesh25412
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16658,7 +16688,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh179166
+  m_Name: pb_Mesh25506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17566,7 +17596,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh179110
+  m_Name: pb_Mesh25426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21787,6 +21817,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armsGun: {fileID: 6626204754907671926}
   gunAnim: {fileID: 6626204754907671927}
+  ImpactParticleSystem: {fileID: 0}
+  ShootingSystem: {fileID: 0}
+  BulletSpawnPoint: {fileID: 0}
+  BulletTrail: {fileID: 0}
+  fireRate: 0.1
+  damage: 25
+  Mask:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 0}
+  wepCamera: {fileID: 0}
+  glockFireSound: {fileID: 0}
+  glockReloadSound: {fileID: 0}
+  maxAmmo: 15
+  currentAmmo: 0
+  reloadTime: 0
+  isReloading: 0
 --- !u!1 &6655690510632913506
 GameObject:
   m_ObjectHideFlags: 0

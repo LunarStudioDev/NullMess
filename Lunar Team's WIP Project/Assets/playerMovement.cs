@@ -164,7 +164,7 @@ private void MyInput()
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
     if (Input.GetKeyDown(uiKey)){
-        if(isCube1On || isUiOn){
+        //if(isCube1On || isUiOn){
         if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.lockState = CursorLockMode.Confined;
             scriptLook.lookEnabled = false;
@@ -185,7 +185,7 @@ private void MyInput()
         ui.SetActive(!ui.activeSelf);
         crosshair.SetActive(!crosshair.activeSelf);
         Cursor.visible = !Cursor.visible;
-        }
+        //}
 
 
 
