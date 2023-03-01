@@ -1,4 +1,4 @@
-# 💫 About Us:
+# 💫 O grze:
 🔭 NULL - nasza pierwsza edukacyjna gra, która również jest FPS'em.<br>🌱 Stworzona na silniku Unity uczymy się tworzyć gry.<br>⚡ Gra była powstawana przez 2 miesiące.
 
 
