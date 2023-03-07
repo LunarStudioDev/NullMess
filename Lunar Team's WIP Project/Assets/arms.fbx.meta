@@ -54,8 +54,8 @@ ModelImporter:
     bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 1
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.25
+    maxBonesPerVertex: 29
+    minBoneWeight: 0.062
     optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0

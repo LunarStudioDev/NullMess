@@ -66,6 +66,8 @@ IEnumerator waiter(){
             StartCoroutine(SpawnTrail(trail, hit));
             enemyHP hpScript = objectHit.parent.GetComponent<enemyHP>();
                 hpScript.TakeDamage(damage);
+            enemyHandsAI hpScript2 = objectHit.parent.GetComponent<enemyHandsAI>();
+                hpScript2.TakeDamage(damage);
           }
           LastShootTime = Time.time;
     }

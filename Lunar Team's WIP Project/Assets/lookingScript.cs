@@ -28,6 +28,7 @@ public class lookingScript : MonoBehaviour
     void OnApplicationFocus(bool hasFocus)
     {
         if(hasFocus){
+            Debug.Log("hasfocus");
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
             if (Cursor.lockState == CursorLockMode.Locked){
              Cursor.visible = false;
