@@ -1,12 +1,13 @@
+# 💫 O grze:
+🔭 NULL - nasza pierwsza edukacyjna gra, która również jest FPS'em.<br>🌱 Stworzona na silniku Unity uczymy się tworzyć gry.<br>⚡ Gra była powstawana przez 2 miesiące. W pliku "Null v#.#" znajduje się aktualna wersja gry.<br>
 
-Dokumentacja - Zdjęcia, opis gry.
 
-Null v#.# - Najnowsza wersja gry
 
-Plik z projektem: Lunar Team's WIP Project
-----------------------
-Ważne informacje:
-1. Pierwszy poziom jest jeszcze niedopracowany, zawiera jeszcze pare błędów, więc załączony w pliku Build jest sam jego początek.
-Na X można otwierać UI i przeciągać bloki.
-2. Mechanika broni jest już skończona ale pojawia się dopiero pod koniec pierwszego poziomu.
+# 💻 Tech Stack:
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=LunarStudioDev&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=LunarStudioDev&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+---
 
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
