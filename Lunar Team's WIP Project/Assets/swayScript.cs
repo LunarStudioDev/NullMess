@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class swayScript : MonoBehaviour
 {
+
     public float swayMultiplier;
     public float smoothness;
     public Rigidbody rb;

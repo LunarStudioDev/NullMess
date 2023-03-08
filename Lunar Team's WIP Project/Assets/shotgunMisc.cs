@@ -12,7 +12,7 @@ public GameObject armsGun;
     public TrailRenderer BulletTrail;
     public float fireRate = 0.5f;
     public float damage = 50f;
-    private float LastShootTime;
+    public float LastShootTime;
     public LayerMask Mask;
     public GameObject player;
     public Camera wepCamera;
@@ -27,6 +27,7 @@ public bool isReloading;
     void Start()
     {
         gunAnim.updateMode = AnimatorUpdateMode.Normal;
+        gunAnim.Play("idle", -1, 0f);
     }
     void Update()
     {
@@ -42,18 +43,16 @@ public bool isReloading;
 
 IEnumerator waiter(){
      isReloading = true;
-     AudioSource sourceaudio = GetComponent<AudioSource>();
-     sourceaudio.PlayOneShot(glockReloadSound);
      yield return new WaitForSeconds(reloadTime);
      currentAmmo = maxAmmo;
      isReloading = false;
      }
 
     public void Shoot(){
-        if(LastShootTime + fireRate < Time.time && currentAmmo > 0){
+        if(LastShootTime + fireRate < Time.time && currentAmmo > 0 && !isReloading){
+
             currentAmmo = currentAmmo - 1;
             AudioSource sourceaudio = GetComponent<AudioSource>();
-          sourceaudio.PlayOneShot(glockFireSound);
 
           gunAnim.SetTrigger("fire");
           ShootingSystem.Play();
@@ -61,6 +60,7 @@ IEnumerator waiter(){
           Ray ray = wepCamera.ScreenPointToRay(Input.mousePosition);
           //BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask
           RaycastHit hit;
+          LastShootTime = Time.time;
           if (Physics.Raycast(ray, out hit)){
             Transform objectHit = hit.transform;
             Debug.Log(objectHit);
@@ -73,7 +73,6 @@ IEnumerator waiter(){
             enemyHandsAI hpScript2 = objectHit.parent.GetComponent<enemyHandsAI>();
                 hpScript2.TakeDamage(damage);
           }
-          LastShootTime = Time.time;
     }
 
       }

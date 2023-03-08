@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class testAnimation : MonoBehaviour
 {
+    public float powerMeter = 0f;
     public GameObject armsGun;
     public Animator gunAnim;
     public ParticleSystem ImpactParticleSystem;
     public ParticleSystem ShootingSystem;
     public Transform BulletSpawnPoint;
     public TrailRenderer BulletTrail;
-    public float fireRate = 0.1f;
+    public float fireRate = 0.15f;
     public float damage = 25f;
     private float LastShootTime;
     public LayerMask Mask;
@@ -24,15 +25,42 @@ public float currentAmmo;
 public float reloadTime;
 public bool isReloading;
 
+    void Start(){
+         gunAnim.updateMode = AnimatorUpdateMode.Normal;
+         gunAnim.Play("IdleAnimation", -1, 0f);
+         StartCoroutine(powerRecharge());
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)){
+            if (!isReloading){
             gunAnim.SetTrigger("reload");
             StartCoroutine(waiter());
+            }
             
         }
         if (Input.GetKeyDown(KeyCode.Mouse0)){
          Shoot();
+        }
+        if(LastShootTime + fireRate < Time.time && currentAmmo > 0 && !isReloading){
+            if (powerMeter > 33f && Input.GetKeyDown(KeyCode.Mouse1)){
+                fireRate = -1f;
+            damage = 50f;
+            currentAmmo++;
+            Shoot();
+            if (powerMeter > 66f){
+                currentAmmo++;
+                Shoot();
+                if(powerMeter == 100f){
+                    currentAmmo++;
+                    Shoot();
+                }
+            }
+            powerMeter = 0f;
+            damage = 25f;
+            fireRate = 0.15f;
+        }
         }
     }
 
@@ -45,8 +73,16 @@ IEnumerator waiter(){
      isReloading = false;
      }
 
+IEnumerator powerRecharge(){
+    while(true){
+        yield return new WaitForSeconds(0.5f);
+        powerMeter = powerMeter + 1f;
+    }
+}
+
     public void Shoot(){
-        if(LastShootTime + fireRate < Time.time && currentAmmo > 0){
+        if(LastShootTime + fireRate < Time.time && currentAmmo > 0 && !isReloading){
+            print("shotOnce");
             currentAmmo = currentAmmo - 1;
             AudioSource sourceaudio = GetComponent<AudioSource>();
           sourceaudio.PlayOneShot(glockFireSound);
@@ -57,6 +93,7 @@ IEnumerator waiter(){
           Ray ray = wepCamera.ScreenPointToRay(Input.mousePosition);
           //BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask
           RaycastHit hit;
+          LastShootTime = Time.time;
           if (Physics.Raycast(ray, out hit)){
             Transform objectHit = hit.transform;
             Debug.Log(objectHit);
@@ -64,12 +101,18 @@ IEnumerator waiter(){
             Debug.Log("postRaycast");
             TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
-            enemyHP hpScript = objectHit.parent.GetComponent<enemyHP>();
+            if(objectHit.parent.GetComponent<enemyHP>()){
+                enemyHP hpScript = objectHit.parent.GetComponent<enemyHP>();
                 hpScript.TakeDamage(damage);
-            enemyHandsAI hpScript2 = objectHit.parent.GetComponent<enemyHandsAI>();
+                powerMeter = powerMeter + 5f;
+            }
+             if(objectHit.parent.GetComponent<enemyHandsAI>()){
+                enemyHandsAI hpScript2 = objectHit.parent.GetComponent<enemyHandsAI>();
                 hpScript2.TakeDamage(damage);
+                powerMeter = powerMeter + 5f;
+            }
           }
-          LastShootTime = Time.time;
+          
     }
 
       }

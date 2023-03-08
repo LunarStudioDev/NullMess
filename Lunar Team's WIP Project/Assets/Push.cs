@@ -31,8 +31,10 @@ private bool fast;
         transform.localScale += scaleChange;
         transform.localPosition += transChange;
     }
-    if(Input.GetKeyDown(leftKey)){
-        //rb.AddForce(6400, 3200 , 0);
+    if(Input.GetKey(leftKey)){
+        transform.localScale -= scaleChange;
+        transform.localPosition -= transChange;
+
     }
 
     if(fast){

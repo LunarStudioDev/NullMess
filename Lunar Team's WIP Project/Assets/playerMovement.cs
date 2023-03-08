@@ -50,12 +50,20 @@ private bool exitingSlope;
 
 //ui detection
 public KeyCode uiKey = KeyCode.X;
+
+//ui bs
 public GameObject ui;
+public GameObject ui2;
 public GameObject crosshair;
 
 private bool isUiOn;
 
+private bool isUi2On;
+//end
+
 public bool isCube1On;
+
+public bool isCube2On;
 
 public lookingScript scriptLook;
 
@@ -164,7 +172,30 @@ private void MyInput()
         transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
     if (Input.GetKeyDown(uiKey)){
-        //if(isCube1On || isUiOn){
+        if((isCube2On || isUi2On) && !isCube1On && !isUiOn){
+        if(Cursor.lockState == CursorLockMode.Locked){
+            Cursor.lockState = CursorLockMode.Confined;
+            scriptLook.lookEnabled = false;
+            swayScript.swayOn = false;
+            swayScript.bobOffset = false;
+            swayScript.bobSway = false;
+            isUi2On = true;
+            
+            
+        } else{
+            isUi2On = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            scriptLook.lookEnabled = true;
+            swayScript.swayOn = true;
+            swayScript.bobOffset = true;
+            swayScript.bobSway = true;
+        }
+        ui2.SetActive(!ui2.activeSelf);
+        crosshair.SetActive(!crosshair.activeSelf);
+        Cursor.visible = !Cursor.visible;
+        }
+
+        if((isCube1On || isUiOn) && !isCube2On && !isUi2On){
         if(Cursor.lockState == CursorLockMode.Locked){
             Cursor.lockState = CursorLockMode.Confined;
             scriptLook.lookEnabled = false;
@@ -188,6 +219,8 @@ private void MyInput()
         //}
 
 
+
+    }
 
     }
 }

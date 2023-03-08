@@ -4,6 +4,21 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: 8423fae5827f3f14cb189bf3fab89df4
+  - enabled: 1
+    path: Assets/1FirstLevel.unity
+    guid: 681b0a1c8d3bcfa418d812f3c15a2175
+  - enabled: 1
+    path: Assets/secondLevelCombat.unity
+    guid: 49e01a5c2b37e91438e8250ce89dda29
+  - enabled: 1
+    path: Assets/thirdLevelCombat.unity
+    guid: 37c6c08d22a81d1429cbd32b81304206
+  - enabled: 0
+    path: Assets/testScenepost1.unity
+    guid: b117b5dd4974dae4188b6cfa7f348779
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4a30c383c62039d45ae56f387e4aae55, type: 2}
